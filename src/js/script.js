@@ -11,23 +11,29 @@
 		fluidSpeed: 800
 	});
 
-	$(".owl-carousel-two").owlCarousel({
-		items: 1,
-		loop: true,
-		dots: false,
-		nav: true,
-		navSpeed: 800,
-		margin: 100,
-		smartSpeed: 800,
-		fluidSpeed: 800,
-		navText: ["<img src='img/solutions/arrow-left.png'>", "<img src='img/solutions/arrow-right.png'>"],
-	});
+	function owl_two_init() {
+		$(".owl-carousel-two").owlCarousel({
+			items: 1,
+			loop: true,
+			dots: false,
+			nav: true,
+			navSpeed: 800,
+			margin: 100,
+			smartSpeed: 800,
+			fluidSpeed: 800,
+			navText: ["<img src='img/solutions/arrow-left.png'>", "<img src='img/solutions/arrow-right.png'>"],
+		});
+	}
+	owl_two_init();
+
 	/* owl end */
 
 	$('.solutions__tabs').on('click', 'div:not(.solutions__tab_active)', function () {
+		$('.owl-carousel-two').owlCarousel('destroy');
 		$(this)
 			.addClass('solutions__tab_active').siblings().removeClass('solutions__tab_active')
 			.closest('div.container').find('div.solutions__tab-item').removeClass('solutions__tab-item_active').eq($(this).index()).addClass('solutions__tab-item_active');
+		owl_two_init()
 	});
 
 	// 	/* validation form start */
