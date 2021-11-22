@@ -1,0 +1,13 @@
+@mixin owl-clean {
+	.owl-nav {
+		.owl-next,
+		.owl-prev {
+			&:hover {
+				background: unset;
+			}
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+}

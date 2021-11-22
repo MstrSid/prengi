@@ -1,6 +1,6 @@
 ﻿$(document).ready(function () {
 	/* owl start */
-	$(".owl-carousel").owlCarousel({
+	$(".owl-carousel-one").owlCarousel({
 		items: 1,
 		loop: true,
 		nav: true,
@@ -10,7 +10,25 @@
 		smartSpeed: 800,
 		fluidSpeed: 800
 	});
+
+	$(".owl-carousel-two").owlCarousel({
+		items: 1,
+		loop: true,
+		dots: false,
+		nav: true,
+		navSpeed: 800,
+		margin: 100,
+		smartSpeed: 800,
+		fluidSpeed: 800,
+		navText: ["<img src='img/solutions/arrow-left.png'>", "<img src='img/solutions/arrow-right.png'>"],
+	});
 	/* owl end */
+
+	$('.solutions__tabs').on('click', 'div:not(.solutions__tab_active)', function () {
+		$(this)
+			.addClass('solutions__tab_active').siblings().removeClass('solutions__tab_active')
+			.closest('div.container').find('div.solutions__tab-item').removeClass('solutions__tab-item_active').eq($(this).index()).addClass('solutions__tab-item_active');
+	});
 
 	// 	/* validation form start */
 	// 	function validateForm(form) {
