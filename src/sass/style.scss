@@ -1,0 +1,17 @@
+@use "libs/bootstrap-reboot.min";
+@use "libs/fonts";
+@use "libs/animate.min";
+@use "base/variables";
+@use "base/mixins";
+
+* {
+	font-family: "Roboto", sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	position: relative;
+	max-width: 1140px;
+	margin: 0 auto;
+}
