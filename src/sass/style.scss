@@ -1,8 +1,7 @@
 @use "libs/bootstrap-reboot.min";
 @use "libs/fonts";
 @use "libs/animate.min";
-@use "base/variables";
-@use "base/mixins";
+@use "blocks/header";
 
 * {
 	font-family: "Roboto", sans-serif;
