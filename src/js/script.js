@@ -9,33 +9,6 @@
 		margin: 200,
 		smartSpeed: 800,
 		fluidSpeed: 800
-		/*responsive: {
-			300: {
-				items: 1,
-				nav: false,
-				margin: 50
-			},
-			550: {
-				items: 1,
-				margin: 50
-			},
-			600: {
-				items: 1,
-				margin: 50
-			},
-			700: {
-				items: 1,
-				margin: 100
-			},
-			800: {
-				items: 3,
-				margin: -50
-			}	,
-			900: {
-				items: 3,
-				margin: -50
-			}						
-		}*/
 	});
 	/* owl end */
 
