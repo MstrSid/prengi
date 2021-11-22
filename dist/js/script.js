@@ -1,42 +1,41 @@
-// $(document).ready(function () {
-// 	/* owl start */
-// 	$(".owl-carousel").owlCarousel({
-// 		center: true,
-// 		items: 3,
-// 		loop: true,
-// 		margin: -50,
-// 		dots: false,
-// 		nav: true,
-// 		navText: ["<img src='img/reviews/arrow_left.png'>", "<img src='img/reviews/arrow_right.png'>"],
-// 		responsive: {
-// 			300: {
-// 				items: 1,
-// 				nav: false,
-// 				margin: 50
-// 			},
-// 			550: {
-// 				items: 1,
-// 				margin: 50
-// 			},
-// 			600: {
-// 				items: 1,
-// 				margin: 50
-// 			},
-// 			700: {
-// 				items: 1,
-// 				margin: 100
-// 			},
-// 			800: {
-// 				items: 3,
-// 				margin: -50
-// 			}	,
-// 			900: {
-// 				items: 3,
-// 				margin: -50
-// 			}						
-// 		}
-// 	});
-// 	/* owl end */
+$(document).ready(function () {
+/* owl start */
+$(".owl-carousel").owlCarousel({
+	items: 1,
+	loop: true,
+	nav: true,
+	navSpeed: 800,
+	dotsSpeed: 800,
+	margin: 200
+	/*responsive: {
+		300: {
+			items: 1,
+			nav: false,
+			margin: 50
+		},
+		550: {
+			items: 1,
+			margin: 50
+		},
+		600: {
+			items: 1,
+			margin: 50
+		},
+		700: {
+			items: 1,
+			margin: 100
+		},
+		800: {
+			items: 3,
+			margin: -50
+		}	,
+		900: {
+			items: 3,
+			margin: -50
+		}						
+	}*/
+});
+/* owl end */
 
 // 	/* validation form start */
 // 	function validateForm(form) {
@@ -129,7 +128,7 @@
 // 		return false;
 // 	});
 // 	/* mailer end */
-// });
+});
 
 // jQuery.validator.addMethod("lettersonly", function (value, element) {
 // 	return this.optional(element) || /^[a-zа-я\s]+$/i.test(value);
