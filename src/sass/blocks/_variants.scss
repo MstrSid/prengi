@@ -19,6 +19,7 @@
 			position: absolute;
 			top: 60%;
 			margin: 0 82px;
+			z-index: 0;
 			&::after {
 				content: "";
 				display: block;
@@ -29,6 +30,7 @@
 				position: absolute;
 				top: -50%;
 				right: -50px;
+				z-index: -1;
 			}
 			&_left {
 				&::after {
@@ -47,6 +49,7 @@
 	}
 	&__imagebox{
 		height: 580px;
+		z-index: -2;
 	}
 	&__image {
 		width: 100%;
