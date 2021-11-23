@@ -33,7 +33,7 @@ $(document).ready(function () {
 		$(this)
 			.addClass('solutions__tab_active').siblings().removeClass('solutions__tab_active')
 			.closest('div.container').find('div.solutions__tab-item').removeClass('solutions__tab-item_active').eq($(this).index()).addClass('solutions__tab-item_active');
-		owl_two_init()
+		owl_two_init();
 	});
 
 	// 	/* validation form start */
