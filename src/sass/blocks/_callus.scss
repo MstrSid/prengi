@@ -1,0 +1,62 @@
+.callus {
+	min-height: 690px;
+	padding: 80px;
+	&__imagebox {
+		width: 302px;
+		height: 302px;
+		padding: 31px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 3px;
+		position: relative;
+		border: 1px solid #00c2f0;
+		background-color: #fff;
+	}
+
+	&__imagebox {
+		&::before,
+		&::after {
+			position: absolute;
+			background: inherit;
+			content: "";
+			z-index: 1;
+		}
+	}
+	&__imagebox {
+		&::before {
+			width: 200px;
+			left: calc(50% - 100px);
+			height: calc(100% + 4px);
+			top: -2px;
+		}
+	}
+	&__imagebox {
+		&::after {
+			height: 200px;
+			left: -2px;
+			width: calc(100% + 4px);
+			top: calc(50% - 100px);
+		}
+	}
+
+	&__imagebox > * {
+		position: relative;
+		z-index: 2; /* ensure any child elements sit above pseudos */
+	}
+
+	&__image {
+		display: block;
+	}
+	&__title {
+		font-size: 28px;
+		font-weight: 900;
+		line-height: 1.2;
+		text-align: center;
+		color: #393939;
+		margin-top: 74px;
+	}
+	&__button {
+		margin-top: 30px;
+	}
+}
