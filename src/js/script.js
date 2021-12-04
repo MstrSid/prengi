@@ -1,4 +1,83 @@
-﻿$(document).ready(function () {
+﻿document.addEventListener('DOMContentLoaded', () => {
+
+	class HeaderItem {
+		constructor(src, alt, title, text, contacts, parentSelector, ...classes) {
+			this.src = src;
+			this.alt = alt;
+			this.title = title;
+			this.text = text;
+			this.contacts = contacts;
+			this.classes = classes;
+			this.parent = document.querySelector(parentSelector);
+		}
+
+		render() {
+			const element = document.createElement('div');
+			if (this.classes.length == 0) {
+				this.classes.push('header__item');
+			}
+			this.classes.forEach(className => element.classList.add(className));
+
+			element.innerHTML = `
+		<div class="header__flag">
+						<img src="${this.src}" alt="${this.alt}" class="header__image">
+					</div>
+					<div class="header__descr">
+						<div class="header__title">${this.title}</div>
+						<div class="header__text">${this.text}</div>
+						<div class="header__contacts">${this.contacts}</div>
+					</div>
+		`;
+
+			this.parent.append(element);
+		}
+
+
+	}
+	new HeaderItem(`icons/png/flags/ukr.png`,
+		`ukraine flag`,
+		`Ukraine`,
+		`hi@vasolutions.com.ua`,
+		`tel. +38(063) 930 07 002`,
+		`.header .header__wrapper`,
+		`header__item`).render();
+
+	new HeaderItem(`icons/png/flags/ger.png`,
+		`germany flag`,
+		`Germany`,
+		`Trierer Strabe 35, 54329 Konz`,
+		`tel. +352 661 88 03 05`,
+		`.header .header__wrapper`,
+		`header__item`).render();
+
+	new HeaderItem(`icons/png/flags/est.png`,
+		`estonia flag`,
+		`Estonia`,
+		`K. Karbery 16/27, 13812 Tallinn`,
+		`tel. +352 661 88 03 05`,
+		`.header .header__wrapper`,
+		`header__item`).render();
+
+	new HeaderItem(`icons/png/flags/gbr.png`,
+		`great britain flag`,
+		`Great Britain`,
+		`E20LP, Golden vc House, London`,
+		`tel. +44 750 109 55 29`,
+		`.header .header__wrapper`,
+		`header__item`).render();
+
+	new HeaderItem(`icons/png/flags/lux.png`,
+		`luxembourg flag`,
+		`Luxembourg`,
+		'2,Rue d`Avalon, L-1159 Luxembourg',
+		`tel. +352 661 88 03 05`,
+		`.header .header__wrapper`,
+		`header__item`).render();
+
+
+});
+
+$(document).ready(function () {
 	/* owl start */
 	$(".owl-carousel-one").owlCarousel({
 		items: 1,
@@ -35,120 +114,4 @@
 			.closest('div.container').find('div.solutions__tab-item').removeClass('solutions__tab-item_active').eq($(this).index()).addClass('solutions__tab-item_active');
 		owl_two_init();
 	});
-
-	// 	/* validation form start */
-	// 	function validateForm(form) {
-	// 		$(form).validate({
-	// 			rules: {
-	// 				name: {
-	// 					required: true,
-	// 					minlength: 2,
-	// 					lettersonly: true
-	// 				},
-	// 				phone: "required",
-	// 				email: {
-	// 					required: true,
-	// 					email: true
-	// 				},
-	// 				message: {
-	// 					required: true
-	// 				}
-	// 			},
-
-	// 			messages: {
-	// 				name: {
-	// 					required: "Введите имя",
-	// 					lettersonly: "Только буквы",
-	// 					minlength: jQuery.validator.format("Не менее {0} символов"),
-	// 				},
-	// 				phone: "Введите свой номер телефона",
-	// 				email: {
-	// 					required: "Введите свой email",
-	// 					email: "Неверный формат"
-	// 				},
-
-	// 				message: {
-	// 					required: "Введите текст сообщения",
-	// 					minlength: jQuery.validator.format("Не менее {0} символов"),
-	// 				}
-	// 			},
-	// 		});
-	// 	}
-
-	// 	function resetInput(form) {
-	// 		$('.modal__close').on('click', function () {
-	// 			var f = $(form);
-	// 			f.validate().resetForm(); // clear out the validation errors
-	// 			f[0].reset(); // clear out the form data
-	// 		});
-	// 	}
-
-	// 	validateForm('#prices__form');
-	// 	validateForm('#questions__form');
-
-	// 	resetInput('#prices__form');
-	// 	resetInput('#questions__form');
-
-	// 	$('input[name=phone]').mask("+375(99)999-99-99");
-	// 	/* validation form end */
-
-	// 	/* smooth scroll start*/
-	// 	$('a').on('click', function (e) {
-	// 		if (this.hash !== '') {
-	// 			e.preventDefault();
-	// 			const hash = this.hash;
-	// 			$('html, body').animate({
-	// 				scrollTop: $(hash).offset().top
-	// 			}, 800);
-	// 		}
-	// 	});
-	// 	/* smooth scroll end*/
-
-	// 	/* mailer start*/
-	// 	$('.modal__close').on('click', function () {
-	// 		$('.overlay, #thankyou').fadeOut();
-	// 	});
-
-	// 	$('form').submit(function (e) {
-	// 		e.preventDefault();
-	// 		if (!$(this).valid()) {
-	// 			return;
-	// 		}
-	// 		$.ajax({
-	// 			type: "POST",
-	// 			url: "mailer/smart.php",
-	// 			data: $(this).serialize()
-	// 		}).done(function () {
-	// 			$(this).find('input').val('');
-	// 			$(this).find('textarea').val('');
-	// 			$('.overlay, #thankyou').fadeIn();
-	// 			$('form').trigger('reset');
-	// 		});
-	// 		return false;
-	// 	});
-	// 	/* mailer end */
 });
-
-// jQuery.validator.addMethod("lettersonly", function (value, element) {
-// 	return this.optional(element) || /^[a-zа-я\s]+$/i.test(value);
-// }, "Only alphabetical characters");
-
-// /* hamburger event start*/
-// window.addEventListener('DOMContentLoaded', () => {
-// 	const menu = document.querySelector('.header__menu'),
-// 		menuItem = document.querySelectorAll('.header__menu-item'),
-// 		hamburger = document.querySelector('.hamburger');
-
-// 	hamburger.addEventListener('click', () => {
-// 		hamburger.classList.toggle('hamburger_active');
-// 		menu.classList.toggle('header__menu_active');
-// 	});
-
-// 	menuItem.forEach(item => {
-// 		item.addEventListener('click', () => {
-// 			hamburger.classList.toggle('hamburger_active');
-// 			menu.classList.toggle('header__menu_active');
-// 		});
-// 	});
-// });
-// /* hamburger event end*/
