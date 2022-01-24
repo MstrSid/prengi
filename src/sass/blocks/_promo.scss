@@ -1,0 +1,100 @@
+@use "../base/mixins";
+
+.promo {
+	min-height: 700px;
+	background: url("../img/promo/promo_bg.jpg") center (center / cover) no-repeat;
+	padding-top: 39px;
+	&__menu {
+		&-list {
+			list-style-type: none;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 0;
+		}
+		&-item {
+			text-transform: uppercase;
+		}
+		&-link {
+			font-size: 13px;
+			font-weight: 700;
+			line-height: 13px;
+			color: #fff;
+			text-align: right;
+			&:hover {
+				text-decoration: none;
+				color: #fff;
+			}
+		}
+	}
+	&__slider {
+		position: relative;
+		margin-top: 27px;
+		height: 569px;
+		&-item {
+			transition: 0.5s all;
+		}
+		.button {
+			margin-top: 39px;
+		}
+		& > .owl {
+			&-stage {
+				&-outer {
+					height: 100%;
+				}
+			}
+			&-nav {
+				position: absolute;
+				bottom: 68px;
+				left: 38%;
+				display: flex;
+				width: 120px;
+				justify-content: space-between;
+				.owl {
+					&-prev,
+					&-next {
+						span {
+							color: #fff;
+							font-size: 20px;
+							line-height: 20px;
+						}
+					}
+				}
+			}
+			&-dots {
+				position: absolute;
+				bottom: 68px;
+				left: 40%;
+				.owl-dot {
+					&:hover {
+						background: unset;
+					}
+					&:focus {
+						outline: none;
+					}
+				}
+			}
+		}
+		@include mixins.owl-clean;
+	}
+
+	&__descr {
+		padding-top: 100px;
+	}
+
+	&__title {
+		font-size: 42px;
+		font-weight: 900;
+		line-height: 1.14;
+		text-align: left;
+		color: #fff;
+	}
+	&__subtitle {
+		font-size: 24px;
+		font-weight: 300;
+		line-height: 1.25;
+		text-align: left;
+		color: #fff;
+		margin-top: 27px;
+	}
+}

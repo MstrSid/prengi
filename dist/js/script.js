@@ -1,4 +1,4 @@
-﻿document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
 	class HeaderItem {
 		constructor(src, alt, title, text, contacts, parentSelector, ...classes) {

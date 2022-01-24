@@ -1,0 +1,53 @@
+.benefits {
+	min-height: 895px;
+	padding: 80px 0;
+	&__question,
+	&__answer {
+		height: 255px;
+		width: 360px;
+		border: 1px solid #ececec;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		padding: 40px;
+		&-icon {
+			width: 118px;
+			height: 118px;
+		}
+		&-image {
+			width: 100%;
+		}
+		&-text {
+			margin-top: 15px;
+			font-size: 18px;
+			font-weight: 300;
+			line-height: 1.44;
+			text-align: center;
+			color: #393939;
+		}
+	}
+	&__divider {
+		margin-top: 50px;
+	}
+	&__title {
+		margin-top: 33px;
+		font-size: 48px;
+		font-weight: bold;
+		line-height: 48px;
+		text-align: center;
+		color: #393939;
+	}
+	&__arrow {
+		&-image {
+			display: block;
+			margin: 0 auto;
+		}
+	}
+	&__answer {
+		margin-top: 37px;
+		&-text {
+			font-weight: 700;
+		}
+	}
+}

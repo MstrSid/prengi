@@ -1,8 +1,18 @@
 @use "libs/bootstrap-reboot.min";
+@use "libs/bootstrap-grid";
 @use "libs/fonts";
 @use "libs/animate.min";
-@use "base/variables";
-@use "base/mixins";
+@use "libs/owl";
+@use "libs/owl-theme-default";
+@use "blocks/header";
+@use "blocks/buttons";
+@use "blocks/promo";
+@use "blocks/benefits";
+@use "blocks/solutions";
+@use "blocks/advantages";
+@use "blocks/variants";
+@use "blocks/callus";
+@use "blocks/footer";
 
 * {
 	font-family: "Roboto", sans-serif;
@@ -11,7 +21,7 @@
 }
 
 .container {
-	position: relative;
-	max-width: 1140px;
-	margin: 0 auto;
+	padding: 0;
 }
+
+@import "blocks/media";

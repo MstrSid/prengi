@@ -1,0 +1,24 @@
+.header {
+	min-height: 85px;
+	padding: 20px 0 16px 0;
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__item {
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+	}
+	&__descr {
+		font-size: 12px;
+	}
+	&__title {
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 14px;
+	}
+	&__image{
+		margin-right: 11px;
+	}
+}
